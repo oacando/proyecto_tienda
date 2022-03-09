@@ -1,0 +1,17 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class DetalleCompraDto {
+
+    private 
+}

@@ -1,0 +1,28 @@
+/**
+ * ******************************************************************************
+ * * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+
+package com.riosoft.contabilidad.dao;
+
+import java.io.Serializable;
+
+import javax.ejb.Local;
+
+import com.riosoft.dao.generic.GenericJpaDao;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.modelo.contabilidad.Producto;
+
+import antlr.collections.List;
+
+/**
+ * @author Oljer Cando
+ */
+@Local
+public interface productoDao extends GenericJpaDao<Producto, Serializable> {
+
+    public List<Producto> getProductos() throws GenericException;
+}

@@ -1,0 +1,35 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.ejb.test;
+
+import org.junit.Test;
+
+import com.riosoft.excepciones.GenericException;
+
+/**
+ * @author Oljer Cando
+ */
+public class InventarioTest extends TestServicioBase {
+    public InventarioTest() {
+    }
+
+    @Test
+    public void validarExistenciaProducto() {
+        try {
+            if (inventarioDaoImpl.obtenerStock(1L)) {
+                System.out.println("existe");
+            } else {
+                System.out.println("No existe");
+            }
+        } catch (final GenericException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+}

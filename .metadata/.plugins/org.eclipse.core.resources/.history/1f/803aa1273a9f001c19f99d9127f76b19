@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package com.riosoft.contabilidad.servicio;
+
+import javax.ejb.Local;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Local
+public interface ServicioCompra {
+
+}

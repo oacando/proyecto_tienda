@@ -1,0 +1,47 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.servicio.impl;
+
+import java.util.Date;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+import com.riosoft.contabilidad.CompraDto;
+import com.riosoft.contabilidad.DetalleCompraDto;
+import com.riosoft.contabilidad.dao.InventarioDao;
+import com.riosoft.contabilidad.servicio.ServicioInventario;
+import com.riosoft.excepciones.GenericException;
+
+/**
+ * @author Oljer Cando
+ */
+@Stateless
+public class ServicioInventarioImpl implements ServicioInventario {
+
+    @EJB
+    private InventarioDao inventarioDao;
+
+    /*
+     * (non-Javadoc)
+     * @see com.riosoft.contabilidad.servicio.ServicioInventario#procesar(com.riosoft.contabilidad.CompraDto, java.lang.String, java.util.Date)
+     */
+    @Override
+    public void procesar(CompraDto compraDto, String usuario, Date fecha) throws GenericException {
+        for (final DetalleCompraDto detalleCompra : compraDto.getDetalleCompra()) {
+            this.inventarioDao.
+        }
+    }
+    
+    private verificarExistenciaProducto() {
+        
+    }
+    
+    
+
+}

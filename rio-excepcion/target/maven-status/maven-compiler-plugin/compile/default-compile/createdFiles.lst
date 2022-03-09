@@ -1,0 +1,4 @@
+com\riosoft\excepciones\DeleteException.class
+com\riosoft\excepciones\PersistException.class
+com\riosoft\excepciones\UpdateException.class
+com\riosoft\excepciones\GenericException.class

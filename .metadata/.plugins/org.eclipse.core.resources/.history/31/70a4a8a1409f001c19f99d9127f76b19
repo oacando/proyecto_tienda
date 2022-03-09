@@ -1,0 +1,59 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+/**
+ * @author Oljer Cando
+ */
+public class DetalleCompraDto implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
+    private Long idProducto;
+    private Integer cantidad;
+    private BigDecimal valorUnitario;
+    private BigDecimal valorTotal;
+
+    public DetalleCompraDto() {
+        super();
+    }
+
+    public Integer getCantidad() {
+        return this.cantidad;
+    }
+
+    public Long getIdProducto() {
+        return this.idProducto;
+    }
+
+    public BigDecimal getValorTotal() {
+        return this.valorTotal;
+    }
+
+    public BigDecimal getValorUnitario() {
+        return this.valorUnitario;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setIdProducto(Long idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public void setValorTotal(BigDecimal valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public void setValorUnitario(BigDecimal valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
+}

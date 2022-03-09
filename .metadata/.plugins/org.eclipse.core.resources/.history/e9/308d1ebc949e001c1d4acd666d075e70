@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package com.riosoft.contabilidad.dao;
+
+import com.riosoft.dao.generic.GenericJpaDao;
+import com.riosoft.modelo.contabilidad.TipoDisenio;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Local
+public interface TipoDisenioDao extends GenericJpaDao<TipoDisenio, Long> {
+
+}

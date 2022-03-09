@@ -1,0 +1,21 @@
+/**
+ * ******************************************************************************
+ *  Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.dao.impl;
+
+import javax.ejb.Stateful;
+import javax.ejb.Stateless;
+
+/**
+ * 
+ * @author Oljer Cando
+ *
+ */
+@Stateless
+public class InventarioDaoImpl {
+
+}

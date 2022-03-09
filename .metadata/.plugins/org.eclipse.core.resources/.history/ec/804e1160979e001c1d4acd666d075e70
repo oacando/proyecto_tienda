@@ -1,0 +1,54 @@
+/**
+ * ******************************************************************************
+ * * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.dao.impl;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+
+import com.riosoft.contabilidad.TipoDisenioDto;
+import com.riosoft.contabilidad.dao.TipoDisenioDao;
+import com.riosoft.dao.generic.impl.GenericJpaDaoImpl;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.modelo.contabilidad.TipoDisenio;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Stateless
+public class TipoDisenioDaoImpl extends GenericJpaDaoImpl<TipoDisenio, Long> implements TipoDisenioDao{
+
+    @Override
+    public List<TipoDisenio> tiposDeDisenio(Boolean estado) throws GenericException {
+        final StringBuilder jpql = new StringBuilder();
+        jpql.append("select distinct new ");
+        jpql.append(TipoDisenioDto.class.getCanonicalName());
+        jpql.append(" (");
+        jpql.append(" a.id,");
+        jpql.append(" a.codigo,");
+        jpql.append(" a.datoAdicional,");
+        jpql.append(" a.descripcion,");
+        jpql.append(" a.nombre,");
+        jpql.append(" a.origen");
+        jpql.append(" ) ");
+        jpql.append("from  TipoDisenio ");
+        jpql.append("where a.estado = : estado ");
+        jpql.append("and a.origen = : origen ");
+        jpql.append("order by a.codigo asc ");
+        try {
+            final TypedQuery<AccionDTO> tQuery = this.em.createQuery(jpql.toString(), AccionDTO.class);
+            tQuery.setParameter("estado", EstadoRegistro.ACTIVO.getEstado());
+            tQuery.setParameter("origen", origen);
+            return tQuery.getResultList();
+        } catch (final Exception e) {
+            throw new GenericException("Se produjo un error al intentar obtener el listado de acciones.", e);
+        }
+    }
+
+}

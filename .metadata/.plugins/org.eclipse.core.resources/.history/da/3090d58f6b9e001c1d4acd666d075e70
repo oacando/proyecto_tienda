@@ -1,0 +1,34 @@
+/**
+ * Prueba Todo uno
+ */
+package com.riosoft.dao.generic;
+
+import java.io.Serializable;
+import java.util.List;
+
+import com.riosoft.excepciones.UpdateException;
+
+/**
+ * Interface genérica para el acceso a datos
+ * 
+ * @author Oljer Cando
+ * @param <T>
+ *            Entidad
+ * @param <K>
+ *            Identificador único de la entidad (PK)
+ */
+public interface GenericJpaDao<T, K extends Serializable> {
+    
+    /**
+     * Actualiza la lista de de entidades
+     *
+     * @author Oljer Cando
+     * @history 7 mar. 2022 - 18:07:04 Oljer Cando
+     * Versión inicial.
+     * @param entityList
+     * @return
+     * @throws UpdateException
+     */
+    public List<T> update(List<T> entityList) throws UpdateException;
+
+}

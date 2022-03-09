@@ -1,0 +1,23 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.facade;
+
+import javax.ejb.Local;
+
+import com.riosoft.excepciones.GenericException;
+
+/**
+ * @author Oljer Cando
+ */
+@Local
+public interface CompraFacade {
+
+    
+    void ingresarCompra()throws GenericException;
+
+}

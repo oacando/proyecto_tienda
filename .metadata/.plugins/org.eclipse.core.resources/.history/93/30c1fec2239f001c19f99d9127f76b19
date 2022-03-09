@@ -1,0 +1,28 @@
+
+package com.riosoft.ejb.test;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import com.riosoft.contabilidad.TipoDisenioDto;
+
+/**
+ * @author Oljer Cando
+ */
+public class TipoDisenioTest extends TestServicioBase {
+    public TipoDisenioTest() {
+    }
+
+    @Test
+    public void prueba() {
+        try {
+            final List<TipoDisenioDto> diseños = tipoDisenioDaoImpl.getDisenioDtos();
+            for (TipoDisenioDto tipoDisenioDto : diseños) {
+                System.out.println(tipoDisenioDto.getNombre());
+            }
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

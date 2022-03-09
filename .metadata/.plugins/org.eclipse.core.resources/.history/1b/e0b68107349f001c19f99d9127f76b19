@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.contabilidad.facade;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public interface CompraFacade {
+
+}

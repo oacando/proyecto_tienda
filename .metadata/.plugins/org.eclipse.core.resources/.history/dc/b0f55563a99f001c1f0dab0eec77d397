@@ -1,0 +1,35 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.seguridad.servicio.impl;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.seguridad.dao.UsuarioDao;
+import com.riosoft.seguridad.servicio.ServicioUsuario;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Stateless
+public class ServicioUsuarioImpl implements ServicioUsuario{
+    
+    @EJB
+    private UsuarioDao usuarioDao;
+
+    /* (non-Javadoc)
+     * @see com.riosoft.seguridad.servicio.ServicioUsuario#veficarExistenciaPorCorreo(java.lang.String)
+     */
+    @Override
+    public Boolean veficarExistenciaPorCorreo(String correo) throws GenericException {
+       this.usuarioDao.veficarExistenciaPorCorreo(correo);
+        return null;
+    }
+
+}

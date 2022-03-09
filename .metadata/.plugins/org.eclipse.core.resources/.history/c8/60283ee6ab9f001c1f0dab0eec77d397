@@ -1,0 +1,73 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.seguridad.servicio.impl;
+
+import java.util.Date;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+import com.riosoft.enumerados.EstadoRegistro;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.excepciones.PersistException;
+import com.riosoft.modelo.seguridad.Usuario;
+import com.riosoft.seguridad.UsuarioDto;
+import com.riosoft.seguridad.dao.UsuarioDao;
+import com.riosoft.seguridad.servicio.ServicioUsuario;
+import com.riosoft.util.GeneradorCodigo;
+
+/**
+ * @author Oljer Cando
+ */
+@Stateless
+public class ServicioUsuarioImpl implements ServicioUsuario {
+
+    @EJB
+    private UsuarioDao usuarioDao;
+
+    /*
+     * (non-Javadoc)
+     * @see com.riosoft.seguridad.servicio.ServicioUsuario#veficarExistenciaPorCorreo(java.lang.String)
+     */
+    @Override
+    public Boolean veficarExistenciaPorCorreo(String correo) throws GenericException {
+        return this.usuarioDao.veficarExistenciaPorCorreo(correo);
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see com.riosoft.seguridad.servicio.ServicioUsuario#guardar(com.riosoft.seguridad.UsuarioDto, java.lang.String, java.util.Date)
+     */
+    @Override
+    public void guardar(UsuarioDto usuarioDto, String usuario, Date fecha) throws GenericException {
+        Usuario user = toUsuario(usuarioDto, usuario, fecha);
+        try {
+            this.usuarioDao.persist(user);
+        } catch (PersistException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+    }
+
+    private Usuario toUsuario(UsuarioDto usuarioDto, String usuario, Date fecha) {
+        Usuario user = new Usuario();
+        user.setAlias(usuarioDto.getAlias());
+        user.setClave(usuarioDto.getClave());
+        user.setCodigoActivacion(GeneradorCodigo.getRandomString(6));
+        user.setCorreo(usuarioDto.getCorreo());
+        user.setDireccion(usuarioDto.getDireccion());
+        user.setNombres(usuarioDto.getNombres());
+        user.setEstado(EstadoRegistro.ACTIVO.getEstado());
+        user.setUsuarioCrea(usuario);
+        user.setUsuarioModifica(usuario);
+        user.setFechaCrea(fecha);
+        user.setFechaModifica(fecha);
+        return user;
+    }
+
+}

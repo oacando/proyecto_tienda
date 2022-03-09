@@ -1,0 +1,55 @@
+/**
+ * ******************************************************************************
+ *  Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.dao.impl;
+
+import javax.ejb.Stateless;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
+
+import com.riosoft.contabilidad.dao.InventarioDao;
+import com.riosoft.dao.generic.GenericJpaDaoImpl;
+import com.riosoft.enumerados.EstadoRegistro;
+import com.riosoft.enumerados.Stock;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.modelo.contabilidad.Inventario;
+import com.riosoft.modelo.contabilidad.TipoDisenio;
+
+/**
+ * 
+ * @author Oljer Cando
+ *
+ */
+@Stateless
+public class InventarioDaoImpl extends GenericJpaDaoImpl<Inventario, Long> implements InventarioDao {
+
+    /* (non-Javadoc)
+     * @see com.riosoft.contabilidad.dao.InventarioDao#validarExistencia(java.lang.Long)
+     */
+    @Override
+    public boolean validarExistencia(Long idProducto) throws GenericException {
+        final StringBuilder jpql = new StringBuilder();
+        jpql.append("from  Inventario i ");
+        jpql.append("where i.producto = : idProducto ");
+        jpql.append("and i.stock > : estado ");
+        jpql.append("and i.estado = : estado ");
+        jpql.append("order by td.id ");
+        try {
+            final TypedQuery<Boolean> tQuery = this.em.createQuery(jpql.toString(), Boolean.class);
+            tQuery.setParameter("estado", EstadoRegistro.ACTIVO.getEstado());
+            tQuery.setParameter("stock", Stock.MINIMO.getStock());
+            tQuery.setParameter("idProducto", idProducto);
+            return tQuery.getSingleResult();
+        } catch (final NoResultException e) {
+            throw new GenericException("No existe producto registrado en la base de datos", e).addInfo("idProducto", idProducto);
+        } catch (final Exception e) {
+            throw new GenericException("Se produjo un error al obtener el producto", e).addInfo("idProducto", idProducto);
+        }
+        return false;
+    }
+
+}

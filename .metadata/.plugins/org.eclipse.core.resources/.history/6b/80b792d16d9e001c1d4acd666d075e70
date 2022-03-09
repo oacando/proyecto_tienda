@@ -1,0 +1,76 @@
+/**
+ *  Prueba Todo uno
+ */
+package com.riosoft.dao.generic.impl;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.xml.registry.DeleteException;
+
+import com.riosoft.dao.generic.GenericJpaDao;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.excepciones.PersistException;
+import com.riosoft.excepciones.UpdateException;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class GenericJpaDaoImpl  <T, K extends Serializable> implements GenericJpaDao<T, K> {
+    
+    @PersistenceContext(unitName = "rio-core-ejb")
+    protected EntityManager em;
+
+    private final Class<T> GenericClass;
+
+
+    @Override
+    public void delete(K id) throws DeleteException {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void delete(T entity) throws DeleteException {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public List<T> findAll() throws GenericException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public T findById(K id) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<T> persist(List<T> entityList) throws PersistException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public T persist(T entity) throws PersistException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<T> update(List<T> entityList) throws UpdateException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public T update(T entity) throws UpdateException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

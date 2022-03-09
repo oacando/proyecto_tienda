@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.dao.generic.impl;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class GenericJpaDaoImpl {
+
+}

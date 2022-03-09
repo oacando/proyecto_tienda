@@ -1,0 +1,30 @@
+
+package com.riosoft.ejb.test;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import com.riosoft.contabilidad.TipoDisenioDto;
+import com.riosoft.modelo.contabilidad.TipoDisenio;
+
+/**
+ * @author Oljer Cando
+ */
+public class TipoDisenioTest extends TestServicioBase {
+    public TipoDisenioTest() {
+    }
+
+    @Test
+    public void poblarTipoDiseño() {
+        try {
+            TipoDisenio tipoDisenio= new TipoDisenio();
+            tipoDisenio.set
+            
+            tipoDisenioDaoImpl.persist(null)
+            
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

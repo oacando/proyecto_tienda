@@ -1,0 +1,14 @@
+/**
+ * Prueba Todo uno
+ */
+package com.riosoft.dao.generic;
+
+import java.io.Serializable;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public interface GenericJpaDao <T, K extends Serializable> {
+
+}

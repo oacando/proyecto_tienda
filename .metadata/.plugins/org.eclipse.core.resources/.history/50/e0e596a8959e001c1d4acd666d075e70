@@ -1,0 +1,26 @@
+/**
+ * ******************************************************************************
+ * * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.dao;
+
+import java.util.List;
+
+import javax.ejb.Local;
+
+import com.riosoft.dao.generic.GenericJpaDao;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.modelo.contabilidad.TipoDisenio;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Local
+public interface TipoDisenioDao extends GenericJpaDao<TipoDisenio, Long> {
+    
+    public List<TipoDisenio> tiposDeDisenio(Boolean estado) throws GenericException;
+}

@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package com.riosoft.enumerados;
+
+/**
+ * Enumerado para los estados lógicos de registro de una tabla
+ * @author Oljer Cando
+ *
+ */
+public enum EstadoRegistro {
+    
+    ACTIVO(Boolean.TRUE),
+    ELIMINADO(Boolean.FALSE);
+
+    private final Boolean estado;
+
+    EstadoRegistro(Boolean estado) {
+        this.estado = estado;
+    }
+
+    public Boolean getEstado() {
+        return this.estado;
+    }
+
+}

@@ -1,0 +1,5 @@
+package com.riosoft.contabilidad.dao;
+
+public interface productoDao {
+
+}

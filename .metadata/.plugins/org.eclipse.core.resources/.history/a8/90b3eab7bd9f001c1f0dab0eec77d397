@@ -1,0 +1,17 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.facade.impl;
+
+import com.riosoft.contabilidad.facade.VentaFacade;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class VentaFacadeImpl implements VentaFacade{
+
+}

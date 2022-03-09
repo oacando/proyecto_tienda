@@ -1,0 +1,29 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors:prueba
+ * *****************************************************************************
+ */
+package com.riosoft.seguridad.rest;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import jakarta.ws.rs.GET;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Path("usuario/")
+@Produces(MediaType.APPLICATION_JSON)
+public interface UsuarioRest {
+
+    @GET
+    @Path("varificar-existencia")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response verificarExistenciaPorCorreo(String param);
+}

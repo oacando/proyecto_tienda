@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UsuarioTest" project="rio-core-ejb" tests="3" started="3" failures="0" errors="1" ignored="0">
+  <testsuite name="com.riosoft.ejb.test.UsuarioTest" time="21.895">
+    <testcase name="verficarExistenciaUsuarioPorCorreo" classname="com.riosoft.ejb.test.UsuarioTest" time="1.727"/>
+    <testcase name="pruebaGeneradorCodigo" classname="com.riosoft.ejb.test.UsuarioTest" time="0.253"/>
+    <testcase name="registrar" classname="com.riosoft.ejb.test.UsuarioTest" time="19.915">
+      <error>javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet&#13;
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)&#13;
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)&#13;
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)&#13;
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:720)&#13;
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:700)&#13;
+	at com.riosoft.dao.generic.GenericJpaDaoImpl.persist(GenericJpaDaoImpl.java:84)&#13;
+	at com.riosoft.ejb.test.UsuarioTest.registrar(UsuarioTest.java:63)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)&#13;
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)&#13;
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)&#13;
+Caused by: org.hibernate.exception.SQLGrammarException: could not extract ResultSet&#13;
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:103)&#13;
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)&#13;
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)&#13;
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)&#13;
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:67)&#13;
+	at org.hibernate.id.enhanced.SequenceStructure$1.getNextValue(SequenceStructure.java:95)&#13;
+	at org.hibernate.id.enhanced.NoopOptimizer.generate(NoopOptimizer.java:40)&#13;
+	at org.hibernate.id.enhanced.SequenceStyleGenerator.generate(SequenceStyleGenerator.java:523)&#13;
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:115)&#13;
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185)&#13;
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128)&#13;
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)&#13;
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)&#13;
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:714)&#13;
+	... 28 more&#13;
+Caused by: org.postgresql.util.PSQLException: ERROR: no existe la relación «contabilidad.hibernate_sequence»
+  Position: 17&#13;
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440)&#13;
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183)&#13;
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308)&#13;
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441)&#13;
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365)&#13;
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:150)&#13;
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:113)&#13;
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57)&#13;
+	... 37 more&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

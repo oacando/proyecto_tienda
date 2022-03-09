@@ -1,0 +1,20 @@
+/**
+ * ******************************************************************************
+ ** Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+/**
+ * @author Oljer Cando
+ */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ProductoDto {
+    private String id;
+    private String nombre;
+    private TipoDisenioDto tipoDisenioDto;
+}

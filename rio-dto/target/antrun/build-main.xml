@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy file="target/rio-dto.jar" tofile="D:/desarrollos/sa/wildfly-17.0.0.Final/standalone/deployments//rio-dto.jar"/>
+</target>
+</project>

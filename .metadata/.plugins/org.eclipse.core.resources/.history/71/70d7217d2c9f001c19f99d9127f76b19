@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.enumerados;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public enum Stock {
+
+}

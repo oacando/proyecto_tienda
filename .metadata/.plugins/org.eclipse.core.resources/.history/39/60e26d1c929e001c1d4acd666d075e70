@@ -1,0 +1,84 @@
+/**
+ * 
+ */
+package com.riosoft.modelo.seguridad;
+
+import java.io.Serializable;
+
+import com.riosoft.modelo.comun.EntidadBase;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Entity
+@Table(name = "usuario", schema = "seguridad")
+public class Usuario extends EntidadBase implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
+    @Column(name = "alias", nullable = false, length = 100)
+    private String alias;
+
+    @Column(name = "nombres", nullable = false, length = 100)
+    private String nombres;
+
+    @Column(name = "correo", nullable = false, length = 100)
+    private String correo;
+
+    @Column(name = "direccion", nullable = false, length = 100)
+    private String direccion;
+
+    @Column(name = "clave", nullable = false, length = 25)
+    private String clave;
+
+    @Column(name = "codigo_activacion", length = 20)
+    private String codigoActivacion;
+
+    public String getCodigoActivacion() {
+        return codigoActivacion;
+    }
+
+    public void setCodigoActivacion(String codigoActivacion) {
+        this.codigoActivacion = codigoActivacion;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+}

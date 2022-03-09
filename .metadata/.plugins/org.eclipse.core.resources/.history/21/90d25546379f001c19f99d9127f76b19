@@ -1,0 +1,68 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad;
+
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class CompraDto {
+
+    private String numeroFactura;
+    private String descripcion;
+    private Date fechaCompra;
+    private Number subTotal;
+    private Number iva;
+    public String getNumeroFactura() {
+        return numeroFactura;
+    }
+    public void setNumeroFactura(String numeroFactura) {
+        this.numeroFactura = numeroFactura;
+    }
+    public String getDescripcion() {
+        return descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    public Date getFechaCompra() {
+        return fechaCompra;
+    }
+    public void setFechaCompra(Date fechaCompra) {
+        this.fechaCompra = fechaCompra;
+    }
+    public Number getSubTotal() {
+        return subTotal;
+    }
+    public void setSubTotal(Number subTotal) {
+        this.subTotal = subTotal;
+    }
+    public Number getIva() {
+        return iva;
+    }
+    public void setIva(Number iva) {
+        this.iva = iva;
+    }
+    public Number getTotal() {
+        return total;
+    }
+    public void setTotal(Number total) {
+        this.total = total;
+    }
+    public List<DetalleCompraDto> getDetallesCompra() {
+        return detallesCompra;
+    }
+    public void setDetallesCompra(List<DetalleCompraDto> detallesCompra) {
+        this.detallesCompra = detallesCompra;
+    }
+    private Number total;
+    private List<DetalleCompraDto> detallesCompra;
+}

@@ -1,0 +1,43 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.servicio.impl;
+
+import java.util.Date;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+import com.riosoft.contabilidad.CompraDto;
+import com.riosoft.contabilidad.dao.DetalleCompraDao;
+import com.riosoft.contabilidad.servicio.ServicioDetalleCompra;
+import com.riosoft.excepciones.GenericException;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Stateless
+public class ServicioDetalleCompraImpl implements ServicioDetalleCompra {
+
+    @EJB
+    private DetalleCompraDao detalleCompraDao;
+    
+    /* (non-Javadoc)
+     * @see com.riosoft.contabilidad.servicio.ServicioDetalleCompra#guardar(com.riosoft.contabilidad.CompraDto, java.lang.String, java.util.Date)
+     */
+    @Override
+    public void guardar(CompraDto compraDto, String usuario, Date fecha) throws GenericException {
+        detalleCompraDao.persist(null);
+        
+    }
+    
+    private 
+    
+    
+
+}

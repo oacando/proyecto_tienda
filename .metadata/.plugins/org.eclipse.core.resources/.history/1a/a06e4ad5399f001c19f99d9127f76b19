@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.contabilidad.servicio;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public interface ServicioCompra {
+
+}

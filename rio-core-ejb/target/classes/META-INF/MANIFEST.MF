@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Built-By: Oljer Cando
+Build-Jdk: 17.0.1
+Created-By: Maven Integration for Eclipse
+Dependencies: deployment.rio-modelo.jar,deployment.rio-dto.jar,deploym
+ ent.rio-excepcion.jar,deployment.rio-utilidades.jar
+

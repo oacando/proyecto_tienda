@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.modelo.contabilidad;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class DetalleVenta {
+
+}

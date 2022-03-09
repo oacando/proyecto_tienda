@@ -1,0 +1,27 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.rest.impl;
+
+import javax.ws.rs.core.Response;
+
+import com.riosoft.contabilidad.rest.CompraRest;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class CompraRestImpl implements CompraRest{
+    private final Logger log = Logger.getLogger(this.getClass());
+    private final JsonUtil jsonUtil = new JsonUtil();
+    
+    @Override
+    public Response obtenerAccion(String param) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

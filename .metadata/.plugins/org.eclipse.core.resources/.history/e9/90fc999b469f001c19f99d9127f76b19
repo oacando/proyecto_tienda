@@ -1,0 +1,26 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.servicio;
+
+import java.util.Date;
+
+import javax.ejb.Local;
+
+import com.riosoft.contabilidad.CompraDto;
+import com.riosoft.excepciones.GenericException;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Local
+public interface ServicioInventario {
+    
+    public void guardar(CompraDto compraDto, String usuario, Date fecha)throws GenericException;
+
+}

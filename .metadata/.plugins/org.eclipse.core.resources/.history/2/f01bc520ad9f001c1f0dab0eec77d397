@@ -1,0 +1,52 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors:prueba
+ * *****************************************************************************
+ */
+package com.riosoft.seguridad.rest.impl;
+
+import javax.ejb.EJB;
+import javax.ws.rs.core.Response;
+
+import org.apache.log4j.Logger;
+
+import com.riosoft.contabilidad.facade.CompraFacade;
+import com.riosoft.enumerados.TipoMensaje;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.seguridad.ResponseDTO;
+import com.riosoft.seguridad.rest.UsuarioRest;
+import com.riosoft.seguridad.servicio.ServicioUsuario;
+import com.riosoft.util.JsonUtil;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class UsuarioRestimpl implements UsuarioRest {
+    private final Logger log = Logger.getLogger(this.getClass());
+    private final JsonUtil jsonUtil = new JsonUtil();
+
+    @EJB(lookup = "java:global/rio-core-ejb/ServicioUsuarioImpl!com.riosoft.seguridad.servicio.ServicioUsuario")
+    private ServicioUsuario servicioUsuario;
+
+    @Override
+    public Response verificarExistenciaPorCorreo(String param) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+    private Response error(ResponseDTO<Boolean> respuesta, GenericException e) {
+        String mensaje = e.getMessage();
+        if ((null != e.getInfo()) && !e.getInfo().isEmpty()) {
+            mensaje = e.getMessage() + " Datos: [ " + e.getInfo() + " ]";
+        }
+        respuesta.setMensaje(mensaje);
+        respuesta.setTipoMensaje(TipoMensaje.ERROR.toString());
+        if (null != e.getCause()) {
+            this.log.error(mensaje, e);
+        }
+        return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(respuesta).build();
+    }
+
+}

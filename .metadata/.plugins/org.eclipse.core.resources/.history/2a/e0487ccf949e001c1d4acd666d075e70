@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.contabilidad.dao.impl;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class TipoDisenioDaoImpl {
+
+}

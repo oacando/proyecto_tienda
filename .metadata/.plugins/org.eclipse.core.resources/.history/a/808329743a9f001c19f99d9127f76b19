@@ -1,0 +1,21 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.servicio.impl;
+
+import javax.ejb.Stateless;
+
+import com.riosoft.contabilidad.servicio.ServicioCompra;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Stateless
+public class ServicioCompraImpl implements ServicioCompra {
+
+}

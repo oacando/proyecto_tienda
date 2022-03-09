@@ -1,0 +1,23 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.seguridad.servicio;
+
+import javax.ejb.EJB;
+import javax.ejb.Local;
+
+import com.riosoft.seguridad.dao.UsuarioDao;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Local
+public interface ServicioUsuario {
+
+    @EJB
+    private UsuarioDao usuarioDao;
+}

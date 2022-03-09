@@ -1,0 +1,5 @@
+package com.riosoft.ejb.test;
+
+public class TipoDisenio {
+
+}

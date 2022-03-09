@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package com.riosoft.contabilidad.dao;
+
+import com.riosoft.dao.generic.GenericJpaDao;
+import com.riosoft.modelo.contabilidad.Inventario;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Local
+public interface InventarioDao extends GenericJpaDao<Inventario, Long>{
+
+}

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.modelo.seguridad;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class Usuario {
+
+}

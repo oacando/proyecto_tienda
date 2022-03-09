@@ -1,0 +1,41 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.ejb.test;
+
+import org.junit.Test;
+
+import com.riosoft.excepciones.GenericException;
+
+/**
+ * @author Oljer Cando
+ */
+public class UsuarioTest extends TestServicioBase {
+
+    public UsuarioTest() {
+
+    }
+
+    /**
+     * valida la existencia de un correo en la entidad usuario
+     *
+     * @author Oljer Cando
+     * @history 9 mar. 2022 - 07:55:51 Oljer Cando
+     *          Versión inicial.
+     */
+    @Test
+    public void verficarExistenciaUsuarioPorCorreo() {
+        try {
+            if (usuarioDaoImpl.validarExistenciaPorCorreo("oljer.cando@abc.com")) {
+                System.out.println("existe");
+            } else {
+                System.out.println("no existe");
+            }
+        } catch (final GenericException e) {
+            e.printStackTrace();
+        }
+    }
+}

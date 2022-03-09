@@ -1,0 +1,12 @@
+/**
+ * Prueba Todo uno
+ */
+package com.riosoft.excepciones;
+
+/**
+ * @author Oljer Cando
+ */
+@ApplicationException(rollback = true)
+public class PersistException extends Exception{
+
+}

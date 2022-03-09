@@ -1,0 +1,86 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad;
+
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @author Oljer Cando
+ */
+public class CompraDto {
+
+    private String numeroFactura;
+    private String descripcion;
+    private Date fechaCompra;
+    private Number subTotal;
+    private Number iva;
+    private Number total;
+    private List<DetalleCompraDto> detallesCompra;
+
+    public CompraDto() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public String getDescripcion() {
+        return this.descripcion;
+    }
+
+    public List<DetalleCompraDto> getDetallesCompra() {
+        return this.detallesCompra;
+    }
+
+    public Date getFechaCompra() {
+        return this.fechaCompra;
+    }
+
+    public Number getIva() {
+        return this.iva;
+    }
+
+    public String getNumeroFactura() {
+        return this.numeroFactura;
+    }
+
+    public Number getSubTotal() {
+        return this.subTotal;
+    }
+
+    public Number getTotal() {
+        return this.total;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setDetallesCompra(List<DetalleCompraDto> detallesCompra) {
+        this.detallesCompra = detallesCompra;
+    }
+
+    public void setFechaCompra(Date fechaCompra) {
+        this.fechaCompra = fechaCompra;
+    }
+
+    public void setIva(Number iva) {
+        this.iva = iva;
+    }
+
+    public void setNumeroFactura(String numeroFactura) {
+        this.numeroFactura = numeroFactura;
+    }
+
+    public void setSubTotal(Number subTotal) {
+        this.subTotal = subTotal;
+    }
+
+    public void setTotal(Number total) {
+        this.total = total;
+    }
+}

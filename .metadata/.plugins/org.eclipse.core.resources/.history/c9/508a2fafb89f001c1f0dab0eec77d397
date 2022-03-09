@@ -1,0 +1,66 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.servicio.impl;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.ejb.Stateless;
+
+import com.riosoft.contabilidad.CompraDto;
+import com.riosoft.contabilidad.DetalleCompraDto;
+import com.riosoft.contabilidad.VentaDto;
+import com.riosoft.contabilidad.dao.DetalleVentaDao;
+import com.riosoft.contabilidad.servicio.ServicioDetalleVenta;
+import com.riosoft.enumerados.EstadoRegistro;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.excepciones.PersistException;
+import com.riosoft.modelo.contabilidad.Compra;
+import com.riosoft.modelo.contabilidad.DetalleCompra;
+import com.riosoft.modelo.contabilidad.DetalleVenta;
+import com.riosoft.modelo.contabilidad.Venta;
+
+/**
+ * @author Oljer Cando
+ */
+@Stateless
+public class ServicioDetalleVentaImpl implements ServicioDetalleVenta {
+    
+    @EJB
+    private DetalleVentaDao detalleVentaDao;
+
+    /* (non-Javadoc)
+     * @see com.riosoft.contabilidad.servicio.ServicioDetalleVenta#guardar(com.riosoft.contabilidad.VentaDto, java.lang.String, java.util.Date)
+     */
+    @Override
+    public void guardar(VentaDto ventaDto, String usuario, Date fecha) throws GenericException {
+        try {
+            this.detalleVentaDao.persist(this.toDetalleVenta(ventaDto, usuario, fecha));
+        } catch (final PersistException e) {
+            throw new GenericException(e.getMessage(), e);
+        }
+        
+    }
+    
+    private List<DetalleVenta> toDetalleVenta(VentaDto ventaDto, String usuario, Date fecha) {
+        final List<DetalleVenta> detallesVentas= new ArrayList<>();
+        final Venta venta = new Venta();
+        venta.setId(ventaDto.getId());
+        for (final DetalleCompraDto detalleCompraDto : compraDto.getDetalleCompra()) {
+            final DetalleCompra detalleCompra = this.toDetalleCompra(detalleCompraDto, compra);
+            detalleCompra.setEstado(EstadoRegistro.ACTIVO.getEstado());
+            detalleCompra.setUsuarioCrea(usuario);
+            detalleCompra.setUsuarioModifica(usuario);
+            detalleCompra.setFechaCrea(fecha);
+            detalleCompra.setFechaModifica(fecha);
+            detallesCompras.add(detalleCompra);
+        }
+        return detallesCompras;
+    }
+
+}

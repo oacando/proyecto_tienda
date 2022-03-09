@@ -1,0 +1,22 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.servicio.impl;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class ServicioCompraImpl {
+    /**
+     * ******************************************************************************
+     *  Copyright (c) 2022 Todo 1. All rights reserved.
+     * * Contributors:
+     * * prueba
+     * *****************************************************************************
+     */
+}

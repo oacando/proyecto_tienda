@@ -1,0 +1,5 @@
+package com.riosoft.contabilidad.dao.impl;
+
+public class InventarioDaoImpl {
+
+}

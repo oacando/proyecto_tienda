@@ -1,0 +1,54 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.servicio.impl;
+
+import java.util.Date;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+import com.riosoft.contabilidad.CompraDto;
+import com.riosoft.contabilidad.DetalleCompraDto;
+import com.riosoft.contabilidad.dao.InventarioDao;
+import com.riosoft.contabilidad.servicio.ServicioInventario;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.excepciones.UpdateException;
+import com.riosoft.modelo.contabilidad.Inventario;
+
+/**
+ * @author Oljer Cando
+ */
+@Stateless
+public class ServicioInventarioImpl implements ServicioInventario {
+
+    @EJB
+    private InventarioDao inventarioDao;
+
+    /*
+     * (non-Javadoc)
+     * @see com.riosoft.contabilidad.servicio.ServicioInventario#procesar(com.riosoft.contabilidad.CompraDto, java.lang.String, java.util.Date)
+     */
+    @Override
+    public void procesar(CompraDto compraDto, String usuario, Date fecha) throws GenericException {
+        for (final DetalleCompraDto detalleCompra : compraDto.getDetalleCompra()) {
+            try {
+                final Inventario inventario = inventarioDao.buscarPorIdProducto(detalleCompra.getIdProducto());
+                final Integer stockActual = inventario.getStock() + detalleCompra.getCantidad().intValue();
+                inventario.setStock(stockActual);
+                try {
+                    inventarioDao.update(inventario);
+                } catch (UpdateException e) {
+                    throw new GenericException(e.getMessage(), e);
+                }
+            } catch (final GenericException e) {
+                throw new GenericException(e.getMessage(), e);
+            }
+        }
+    }
+
+}

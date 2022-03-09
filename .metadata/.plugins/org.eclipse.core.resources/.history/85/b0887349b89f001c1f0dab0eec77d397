@@ -1,0 +1,37 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.servicio.impl;
+
+import java.util.Date;
+
+import javax.ejb.Stateless;
+
+import com.riosoft.contabilidad.VentaDto;
+import com.riosoft.contabilidad.dao.DetalleVentaDao;
+import com.riosoft.contabilidad.servicio.ServicioDetalleVenta;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.modelo.contabilidad.DetalleVenta;
+
+/**
+ * @author Oljer Cando
+ */
+@Stateless
+public class ServicioDetalleVentaImpl implements ServicioDetalleVenta {
+    
+    @EJB
+    private DetalleVentaDao
+
+    /* (non-Javadoc)
+     * @see com.riosoft.contabilidad.servicio.ServicioDetalleVenta#guardar(com.riosoft.contabilidad.VentaDto, java.lang.String, java.util.Date)
+     */
+    @Override
+    public void guardar(VentaDto ventaDto, String usuario, Date fecha) throws GenericException {
+        // TODO Auto-generated method stub
+        
+    }
+
+}

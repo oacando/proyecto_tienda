@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.excepciones;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class DeleteException {
+
+}

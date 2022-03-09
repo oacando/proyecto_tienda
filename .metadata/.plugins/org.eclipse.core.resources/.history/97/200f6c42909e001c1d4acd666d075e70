@@ -1,0 +1,84 @@
+/**
+ * 
+ */
+package com.riosoft.modelo.contabilidad;
+
+import java.io.Serializable;
+
+import com.riosoft.modelo.comun.EntidadBase;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class Venta extends EntidadBase implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
+    @Column(name = "numero_factura", nullable = false, length = 100)
+    private String numeroFactura;
+
+    @Column(name = "fecha_venta", nullable = false)
+    private LocalDate fechaVenta;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_cliente", nullable = false, referencedColumnName = "id")
+    private Usuario usuario;
+
+    @Column(name = "subtotal", nullable = false, precision = 18, scale = 2)
+    private BigDecimal subtotal;
+
+    @Column(name = "iva", nullable = false, precision = 18, scale = 2)
+    private BigDecimal iva;
+
+    @Column(name = "total", nullable = false, precision = 18, scale = 2)
+    private BigDecimal total;
+
+    public BigDecimal getTotal() {
+        return total;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
+    }
+
+    public BigDecimal getIva() {
+        return iva;
+    }
+
+    public void setIva(BigDecimal iva) {
+        this.iva = iva;
+    }
+
+    public BigDecimal getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(BigDecimal subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public LocalDate getFechaVenta() {
+        return fechaVenta;
+    }
+
+    public void setFechaVenta(LocalDate fechaVenta) {
+        this.fechaVenta = fechaVenta;
+    }
+
+    public String getNumeroFactura() {
+        return numeroFactura;
+    }
+
+    public void setNumeroFactura(String numeroFactura) {
+        this.numeroFactura = numeroFactura;
+    }
+
+}

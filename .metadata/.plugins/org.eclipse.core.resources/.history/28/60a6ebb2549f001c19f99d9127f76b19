@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.riosoft.contabilidad.rest.impl;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class CompraRestImpl {
+
+}

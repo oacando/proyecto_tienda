@@ -1,0 +1,22 @@
+/**
+ *
+ */
+package com.riosoft.contabilidad;
+
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+/**
+ * @author Oljer Cando
+ */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class TipoDisenioDto implements Serializable {
+
+    private static final long serialVersionUID = -4003474442120438843L;
+
+    public TipoDisenioDto() {
+        super();
+    }
+
+}

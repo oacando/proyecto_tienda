@@ -1,0 +1,72 @@
+/**
+ * 
+ */
+package com.riosoft.modelo.contabilidad;
+
+import java.io.Serializable;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Entity
+@Table(name = "detalle_compra", schema = "contabilidad")
+public class DetalleCompra extends EntidadBase implements Serializable{
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_compra", nullable = false)
+    private Compra compra;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_producto", nullable = false)
+    private Producto producto;
+
+    @Column(name = "cantidad", nullable = false, precision = 18, scale = 2)
+    private BigDecimal cantidad;
+
+    @Column(name = "valor_unitario", nullable = false, precision = 18, scale = 2)
+    private BigDecimal valorUnitario;
+
+    @Column(name = "valor_total", nullable = false, precision = 18, scale = 2)
+    private BigDecimal valorTotal;
+
+    public BigDecimal getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(BigDecimal valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public BigDecimal getValorUnitario() {
+        return valorUnitario;
+    }
+
+    public void setValorUnitario(BigDecimal valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
+
+    public BigDecimal getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(BigDecimal cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+}

@@ -1,0 +1,19 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors: prueba
+ * *****************************************************************************
+ */
+package com.riosoft.seguridad.dao.impl;
+
+import com.riosoft.dao.generic.GenericJpaDaoImpl;
+import com.riosoft.modelo.seguridad.Usuario;
+import com.riosoft.seguridad.dao.UsuarioDao;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class UsuarioDaoImpl extends GenericJpaDaoImpl<Usuario, Long> implements UsuarioDao{
+
+}

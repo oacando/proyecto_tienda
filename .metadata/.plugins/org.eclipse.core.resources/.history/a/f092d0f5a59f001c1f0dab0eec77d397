@@ -1,0 +1,65 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba ocando
+ * *****************************************************************************
+ */
+package com.riosoft.seguridad;
+
+import java.io.Serializable;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class UsuarioDto implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    private String alias;
+    private String nombres;
+    private String correo;
+    private String direccion;
+    private String clave;
+    private String codigoActivacion;
+    public UsuarioDto() {
+        super();
+    }
+    public String getAlias() {
+        return alias;
+    }
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+    public String getNombres() {
+        return nombres;
+    }
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+    public String getCorreo() {
+        return correo;
+    }
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    public String getDireccion() {
+        return direccion;
+    }
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    public String getClave() {
+        return clave;
+    }
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+    public String getCodigoActivacion() {
+        return codigoActivacion;
+    }
+    public void setCodigoActivacion(String codigoActivacion) {
+        this.codigoActivacion = codigoActivacion;
+    }
+ 
+}

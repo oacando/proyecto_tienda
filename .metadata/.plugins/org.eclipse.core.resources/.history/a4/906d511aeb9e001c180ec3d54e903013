@@ -1,0 +1,19 @@
+package com.riosoft.ejb.test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.junit.Test;
+
+public class TipoDisenioTest extends TestServicioBase {
+
+    @Test
+    public void analizar() {
+        final Date fecha = new Date();
+        final SimpleDateFormat format = new SimpleDateFormat("dd MMMM 'de' yyyy, 'a las' HH:mm", new Locale("es", "EC"));
+        final String formateado = format.format(fecha);
+        System.out.println(formateado);
+    }
+
+}

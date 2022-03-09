@@ -1,0 +1,17 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * Contributors:prueba
+ * *****************************************************************************
+ */
+package com.riosoft.seguridad.rest.impl;
+
+import com.riosoft.seguridad.rest.UsuarioRest;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+public class UsuarioRestimpl implements UsuarioRest {
+
+}

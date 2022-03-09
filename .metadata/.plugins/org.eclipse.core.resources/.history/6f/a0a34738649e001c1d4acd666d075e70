@@ -1,0 +1,5 @@
+package com.riosoft.excepciones;
+
+public class PersistException {
+
+}

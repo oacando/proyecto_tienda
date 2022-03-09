@@ -1,0 +1,62 @@
+/**
+ * ******************************************************************************
+ * * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.dao.impl;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
+
+import com.riosoft.contabilidad.TipoDisenioDto;
+import com.riosoft.contabilidad.dao.TipoDisenioDao;
+import com.riosoft.dao.generic.GenericJpaDaoImpl;
+import com.riosoft.enumerados.EstadoRegistro;
+import com.riosoft.excepciones.GenericException;
+import com.riosoft.modelo.contabilidad.TipoDisenio;
+
+/**
+ * @author Oljer Cando
+ *
+ */
+@Stateless
+public class TipoDisenioDaoImpl extends GenericJpaDaoImpl<TipoDisenio, Long> implements TipoDisenioDao{
+
+    public void setEm(EntityManager em) {
+        // TODO Auto-generated method stub
+        this.em=em;
+        
+    }
+    
+    @Override
+    public List<TipoDisenioDto> disenios() throws GenericException {
+        final StringBuilder jpql = new StringBuilder();
+        jpql.append("select distinct new ");
+        jpql.append(TipoDisenioDto.class.getCanonicalName());
+        jpql.append(" (");
+        jpql.append(" td.id,");
+        jpql.append(" td.nemonico,");
+        jpql.append(" td.nombre");
+        jpql.append(" ) ");
+        jpql.append("from  TipoDisenio td ");
+        jpql.append("where td.estado = : estado ");
+        jpql.append("order by td.id ");
+        try {
+            final TypedQuery<TipoDisenioDto> tQuery = this.em.createQuery(jpql.toString(), TipoDisenioDto.class);
+            tQuery.setParameter("estado", EstadoRegistro.ACTIVO.getEstado());
+            System.out.println(tQuery.getFirstResult());
+            return tQuery.getResultList();
+        } catch (final NoResultException e) {
+            throw new GenericException("No existen diseños registrados en la base de datos", e);
+        } catch (final Exception e) {
+            throw new GenericException("Se produjo un error al obtener el diseño", e);
+        }
+    }
+
+}

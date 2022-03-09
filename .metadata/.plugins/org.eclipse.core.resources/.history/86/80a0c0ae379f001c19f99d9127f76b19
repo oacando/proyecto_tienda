@@ -1,0 +1,34 @@
+/**
+ * ******************************************************************************
+ * Copyright (c) 2022 Todo 1. All rights reserved.
+ * * Contributors:
+ * * prueba
+ * *****************************************************************************
+ */
+package com.riosoft.contabilidad.facade.impl;
+
+import javax.ejb.Stateless;
+
+import com.riosoft.contabilidad.CompraDto;
+import com.riosoft.excepciones.GenericException;
+
+/**
+ * @author Oljer Cando
+ */
+@Stateless
+public class CompraFacadeImpl {
+
+    /**
+     * Procesa los datos registrados en la compra
+     *
+     * @author Oljer Cando
+     * @history 8 mar. 2022 - 18:28:36 Oljer Cando
+     *          Versión inicial.
+     * @param compraDto
+     * @throws GenericException
+     */
+    void ingresarCompra(CompraDto compraDto) throws GenericException {
+
+    }
+
+}
